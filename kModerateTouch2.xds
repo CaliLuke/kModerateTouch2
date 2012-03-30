@@ -1,0 +1,87 @@
+{
+    "name": "kModerateTouch2",
+    "settings": {
+        "urlPrefix": "",
+        "directAPI": "",
+        "spacesToIndent": 4,
+        "codeGenFormat": "Class",
+        "exportPath": "",
+        "extPath": "http://extjs.cachefly.net/touch/sencha-touch-2.0.0/",
+        "senchaIoKey": "",
+        "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
+        "lineEnding": "LF",
+        "instantiateStore": true,
+        "genTimestamps": false,
+        "saveOnDeploy": false,
+        "appName": "MyApp",
+        "mapsAPI": "http://maps.google.com/maps/api/js?sensor=true",
+        "cssPath": ""
+    },
+    "xdsVersion": "2.0.0",
+    "xdsBuild": "350",
+    "framework": "touch20",
+    "topInstanceFileMap": {
+        "030a2ecc-41bb-4cd2-8e26-da524a92cf0d": {
+            "paths": [
+                "metadata/model/Entry",
+                "app/model/override/Entry.js",
+                "app/model/Entry.js"
+            ],
+            "className": "Entry"
+        },
+        "fb34f645-a4ff-4081-9f90-24297e54a261": {
+            "paths": [
+                "metadata/controller/MainController",
+                "app/controller/override/MainController.js",
+                "app/controller/MainController.js"
+            ],
+            "className": "MainController"
+        },
+        "0db3f9ca-2aae-4915-8942-512d1ad03b2f": {
+            "paths": [
+                "metadata/store/MyStore",
+                "app/store/override/MyStore.js",
+                "app/store/MyStore.js"
+            ],
+            "className": "MyStore"
+        },
+        "a3574221-df36-4c6d-a003-ae2c99242166": {
+            "paths": [
+                "metadata/view/AboutPanel",
+                "app/view/override/AboutPanel.js",
+                "app/view/AboutPanel.js"
+            ],
+            "className": "AboutPanel"
+        },
+        "2f387e42-6781-46ac-a530-0013acde1f90": {
+            "paths": [
+                "metadata/view/EntryListDetail",
+                "app/view/override/EntryListDetail.js",
+                "app/view/EntryListDetail.js"
+            ],
+            "className": "EntryListDetail"
+        },
+        "a15f88ed-30b4-424b-b434-40d38a986b47": {
+            "paths": [
+                "metadata/view/About",
+                "app/view/override/About.js",
+                "app/view/About.js"
+            ],
+            "className": "About"
+        },
+        "9ac54590-171a-49bc-a819-8acd3605c8ec": {
+            "paths": [
+                "metadata/view/AppContainer",
+                "app/view/override/AppContainer.js",
+                "app/view/AppContainer.js"
+            ],
+            "className": "AppContainer"
+        }
+    },
+    "expandedState": {
+        "data": true,
+        "model": true,
+        "component": true,
+        "controller": true
+    }
+}

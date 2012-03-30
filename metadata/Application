@@ -1,0 +1,47 @@
+{
+    "id": "ExtBox1-ext-gen1969",
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Entry"
+        ],
+        "stores": [
+            "MyStore"
+        ],
+        "views": [
+            "EntryListDetail",
+            "AboutPanel",
+            "About",
+            "AppContainer"
+        ],
+        "icon": "icon.png",
+        "name": "kModerate"
+    },
+    "customConfigs": [],
+    "designerId": "application",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen2830",
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": "kModerate.vars = {\n    debug: false,\n    ks: null,\n    host: 'https://www.kaltura.com',\n    viewingEntryId: null,\n    moderationCurrentAction: null,\n    rememberMeChecked: false\n};\n\nkModerate.myLog = function(msg){\n    if (kModerate.vars.debug){\n        console.log(msg);\n    }\n};\n\ndocumentCookies = document.cookie.split(\";\");\nfor (i=0;i<documentCookies.length;i++)\n{\n  x=documentCookies[i].substr(0,documentCookies[i].indexOf(\"=\"));\n  y=documentCookies[i].substr(documentCookies[i].indexOf(\"=\")+1);\n  x=x.replace(/^\\s+|\\s+$/g,\"\");\n  if(x == 'kmoderateLogin')\n  {\n    kModerate.vars.ks = y;  \n  }\n}\n",
+                "designer|userClassName": "launch"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

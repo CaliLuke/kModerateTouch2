@@ -1,0 +1,318 @@
+{
+    "id": "ExtBox1-ext-gen4775",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MainController"
+    },
+    "customConfigs": [],
+    "designerId": "fb34f645-a4ff-4081-9f90-24297e54a261",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen5029",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "loginForm",
+                "selector": "#loginForm",
+                "designer|userClassName": "loginForm"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6761",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLogin",
+                "implHandler": "var form = this.getLoginForm(),\n    values = form.getValues(),\n    email, password, host;\n\nform.down('button').disable();\n\nemail = values.email;\npassword = values.password;\nhost = values.kalturahost;\n\nif(host != kModerate.vars.host)\n{\n    kModerate.vars.host = host;\n}\n\n// call the login action on the Kaltura Client\nthis.getKalturaClient().user.loginByLoginId(Ext.Function.bind(this.loginCallback, this),\nemail, password, null);\n\n",
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "#loginButton",
+                "designer|userClassName": "onLogin"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen4243",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "#mainView",
+                "designer|userClassName": "mainView"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen12099",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "appContainer",
+                "selector": "appcontainer",
+                "designer|userClassName": "appContainer"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen10955",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "list",
+                "selector": "#entryList",
+                "xtype": "EntryList",
+                "autoCreate": true,
+                "designer|userClassName": "list"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen14328",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "detail",
+                "selector": "#entryListDetail",
+                "xtype": "EntryListDetail",
+                "autoCreate": true,
+                "designer|userClassName": "detail"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen4122",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "about",
+                "selector": "#aboutPanel",
+                "xtype": "AboutPanel",
+                "autoCreate": true,
+                "designer|userClassName": "about"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen7198",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loginCallback",
+                "designer|params": [
+                    "success",
+                    "data"
+                ],
+                "implHandler": "var form = this.getLoginForm();\n\nif(data.code && data.code != 'undefined')\n{\n    form.down('button').enable();\n    form.down('#login-error-wrapper').show();\n    return false;\n}\nkModerate.vars.ks = data;\nif(kModerate.vars.rememberMeChecked)\n{\n    this.setKsCookie();\n}\n// get data and store\nthis.getEntriesData();\n// set active item to List\n//this.getMainView().push(this.getList());\nthis.getAppContainer().setActiveItem(1);",
+                "designer|userClassName": "loginCallback"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6896",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getKalturaClient",
+                "implHandler": "var kConfig = new KalturaConfiguration(null);\n\n// force the client to not send partner ID in the request\nkConfig.partnerId = null; \nkConfig.serviceUrl = kModerate.vars.host;\n\nvar kClient = new KalturaClient(kConfig);\t\nkClient.callsQueue = new Array();\nif(kModerate.vars.ks)\n{\n    kClient.setKs(kModerate.vars.ks);\n}\n\nreturn kClient;",
+                "designer|userClassName": "getKalturaClient"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen7144",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getEntriesData",
+                "implHandler": "var kConfig;\nvar kClient;\nvar me = this;\n\nfunction startSession(){\n    kModerate.myLog('setting the client and ks');\n    kClient = this.getKalturaClient();\n    listEntries(1, 'moderationStatusIn', \"1,2,3,4,5\"); // list entries pending moderation (1) and flagged for moderation (5)\n}\n\nfunction listEntries(page, filterKey, filterValue, sortOrder, success, error) {\n    kModerate.myLog('going to call list entries');\n    var entryFilter = new KalturaBaseEntryFilter();\n    entryFilter.typeEqual = 1;\n    entryFilter[filterKey] = filterValue;\n    entryFilter.statusEqual = KalturaEntryStatus.READY;\n    entryFilter.orderBy = '+createdAt';\n\n    var kalturaPager = new KalturaFilterPager();\n    kalturaPager.pageSize = 10;\n    kalturaPager.pageIndex = page;\n    kClient.baseEntry.listAction(getEntrieListHandler, entryFilter, kalturaPager);\n}\n\nfunction getEntrieListHandler (success, data) {\n    var entriesData = [],\n        count = 0, i;\n\n    if(data.totalCount > 0)\n    {\n        for(i in data.objects)\n        {\n            if(!data.objects[i].id)\n            {\n                continue;\n            }\n            entry = data.objects[i];\n            entriesData[count] = {\n                entryId: entry.id, \n                firstName: entry.name, \n                moderationStatus: entry.moderationStatus,\n                description: entry.description,\n                tags: entry.tags,\n                strModerationStatus: moderationStatusToText(entry.moderationStatus),\n                playerHTML: getPlayerEmbed(entry.partnerId, entry.id),\n                userId: entry.userId\n            };\n            count++;\n        }\n        // load store\n        me.getList().getStore().setData(entriesData);\n    }    \n}\n\nfunction getPlayerEmbed(partnerId, entryId) {\n    var width = Ext.Viewport.element.getWidth()*0.75,\n        height = (width*0.75);\n\n    html  = '<div class=\"kalturaPlayer\" id=\"kaltura_container_'+entryId+'\">';\n    html += '<iframe src=\"http://cdnbakmi.kaltura.com/html5/html5lib/v1.5.9/mwEmbedFrame.php/wid/_';\n    html += partnerId+'/uiconf_id/48501/entry_id/'+entryId+'/?flashvars%5Bks%5D='+kModerate.vars.ks+'\" width=\"'+width+'\" height=\"'+height+'\" frameborder=\"0\"></iframe>';\n    html += '</div>'; \n    return html; \n}\n\nfunction moderationStatusToText(status) {\n    mods = {\n        1: 'Pending Moderation',\n        2: 'Approved',\n        3: 'Rejected',\n        5: 'Flagged for Review'\n    };\n    return mods[status];\n}\n\nstartSession.call(this);\n\nreturn true;",
+                "designer|userClassName": "getEntriesData"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen9632",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAbout",
+                "implHandler": "button.up('navigationview').push(this.getAbout());\nbutton.up('navigationview').getNavigationBar().down('about').hide();",
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": ".about",
+                "designer|userClassName": "onAbout"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen14028",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onListItemTap",
+                "implHandler": "this.getMainView().push(this.getDetail());\nthis.getDetail().setData(record.data);",
+                "name": "itemtap",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "list",
+                "designer|userClassName": "onListItemTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen3268",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setKsCookie",
+                "implHandler": "var exdate=new Date();\nexdate.setDate(exdate.getDate() + 30);\nvar c_value=kModerate.vars.ks + \"; expires=\"+exdate.toUTCString();\ndocument.cookie='kmoderateLogin' + \"=\" + c_value;\n\nvar c_host_value = kModerate.vars.host + \"; expires=\"+exdate.toUTCString();\ndocument.cookie='kmoderateHost' + \"=\" + c_host_value;",
+                "designer|userClassName": "setKsCookie"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen3605",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "removeKsCookie",
+                "implHandler": "var exdate=new Date();\nexdate.setDate(exdate.getDate() - 1);\nvar c_value= \"; expires=\"+exdate.toUTCString();\ndocument.cookie='kmoderateLogin' + \"=\" + c_value;\nvar c_host_value = \"; expires=\"+exdate.toUTCString();\ndocument.cookie='kmoderateHost' + \"=\" + c_host_value;",
+                "designer|userClassName": "removeKsCookie"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen20189",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLogout",
+                "implHandler": "this.getAppContainer().setActiveItem(0);\nthis.getLoginForm().down('button').enable();\nthis.getMainView().reset();\nthis.removeKsCookie();",
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "#logout",
+                "designer|userClassName": "onLogout"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen28708",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onContainerActivate",
+                "implHandler": "if (kModerate.vars.ks) {\n    this.getEntriesData();\n    container.setActiveItem(1);\n}",
+                "name": "activate",
+                "designer|targetType": "Ext.Container",
+                "designer|controlQuery": "appcontainer",
+                "designer|userClassName": "onContainerActivate"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6802",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLoginViewBack",
+                "implHandler": "navigationView.getNavigationBar().down('about').show();",
+                "name": "back",
+                "designer|targetType": "Ext.navigation.View",
+                "designer|controlQuery": "navigationview",
+                "designer|userClassName": "onLoginViewBack"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

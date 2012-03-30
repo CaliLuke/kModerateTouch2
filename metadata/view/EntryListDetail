@@ -1,0 +1,30 @@
+{
+    "id": "ExtBox1-ext-gen2982",
+    "type": "container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "html": null,
+        "id": "entryListDetail",
+        "styleHtmlContent": true,
+        "tpl": "<div class=\"entryModerationDetails\">\n\t<p><strong>Name:</strong> {firstName}</p>\n\t<p><strong>Entry ID:</strong> {entryId}</p>\n\t<p><strong>Moderation Status:</strong> {strModerationStatus}</p>\n\t<p><strong>Description:</strong> {description}</p>\n\t<p><strong>User ID:</strong> {userId}</p>\n\t<p><strong>Tags:</strong> {tags}</p>\n\t<p>{playerHTML}</p>\n</div>",
+        "layout": "fit",
+        "scrollable": "true",
+        "designer|userClassName": "EntryListDetail",
+        "designer|userAlias": "EntryListDetail",
+        "title": "Detail"
+    },
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "title",
+            "type": "string"
+        }
+    ],
+    "designerId": "2f387e42-6781-46ac-a530-0013acde1f90",
+    "$viewOrder": 1,
+    "expanded": true
+}

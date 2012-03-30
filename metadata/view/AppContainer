@@ -1,0 +1,346 @@
+{
+    "id": "ExtBox1-ext-gen10789",
+    "type": "container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "layout": "card",
+        "designer|userClassName": "AppContainer",
+        "designer|userAlias": "appcontainer",
+        "container|animation": "pop"
+    },
+    "customConfigs": [],
+    "designerId": "9ac54590-171a-49bc-a819-8acd3605c8ec",
+    "$viewOrder": 3,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen6169",
+            "type": "navigationview",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "loginView",
+                "itemId": "mynavigationview",
+                "designer|userClassName": "LoginView"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen3452",
+                    "type": "formpanel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "loginForm",
+                        "itemId": "myformpanel6",
+                        "designer|userClassName": "MyFormPanel",
+                        "title": "kModerate"
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen8820",
+                            "type": "component",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "html": "<span id=\"login-error\">Login Failed</span>",
+                                "id": "login-error-wrapper",
+                                "styleHtmlContent": true,
+                                "designer|userClassName": "MyComponent"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen3714",
+                            "type": "fieldset",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "defaults": "{labelWidth: '35%',labelAlign: 'left'}",
+                                "instructions": "Login using your KMC credentials<br />Change the Kaltura Host URL for working with self-hosted edition'",
+                                "title": "",
+                                "designer|userClassName": "MyFieldSet"
+                            },
+                            "customConfigs": [],
+                            "expanded": true,
+                            "cn": [
+                                {
+                                    "id": "ExtBox1-ext-gen3723",
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "Kaltura Host",
+                                        "name": "kalturahost",
+                                        "value": "https://www.kaltura.com",
+                                        "designer|userClassName": "MyTextField"
+                                    },
+                                    "customConfigs": [],
+                                    "expanded": true
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen3730",
+                                    "type": "emailfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "Email",
+                                        "name": "email",
+                                        "value": null,
+                                        "placeHolder": "email@example.com",
+                                        "designer|userClassName": "MyEmailField"
+                                    },
+                                    "customConfigs": [],
+                                    "expanded": true
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen4394",
+                                    "type": "passwordfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "Password",
+                                        "name": "password",
+                                        "value": null,
+                                        "designer|userClassName": "MyPasswordField"
+                                    },
+                                    "customConfigs": [],
+                                    "expanded": true
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen4500",
+                                    "type": "togglefield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "mytogglefield",
+                                        "label": "Remember",
+                                        "name": "toggle",
+                                        "designer|userClassName": "MyToggleField"
+                                    },
+                                    "customConfigs": [],
+                                    "expanded": true,
+                                    "cn": [
+                                        {
+                                            "id": "ExtBox1-ext-gen2861",
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMytogglefieldChange",
+                                                "implHandler": "kModerate.vars.rememberMeChecked = newValue;",
+                                                "name": "change",
+                                                "designer|userClassName": "onMytogglefieldChange"
+                                            },
+                                            "customConfigs": [],
+                                            "expanded": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen6441",
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "loginButton",
+                                "text": "Login",
+                                "designer|userClassName": "MyButton1"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
+                },
+                {
+                    "id": "ExtBox1-ext-gen8740",
+                    "type": "navigationbar",
+                    "reference": {
+                        "name": "navigationBar",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyNavigationBar1"
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen8928",
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "about",
+                                "align": "right"
+                            },
+                            "customConfigs": [],
+                            "iconCls": "icon-linkedinstance",
+                            "expanded": true,
+                            "masterInstanceId": "ExtBox1-ext-gen7821"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen2027",
+            "type": "navigationview",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "mainView",
+                "designer|userClassName": "MainView"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen7297",
+                    "type": "navigationbar",
+                    "reference": {
+                        "name": "navigationBar",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyNavigationBar",
+                        "title": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen7719",
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "about",
+                                "align": "right"
+                            },
+                            "customConfigs": [],
+                            "iconCls": "icon-linkedinstance",
+                            "expanded": true,
+                            "masterInstanceId": "ExtBox1-ext-gen7821"
+                        }
+                    ]
+                },
+                {
+                    "id": "ExtBox1-ext-gen5026",
+                    "type": "list",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "entryList",
+                        "itemId": "entryList",
+                        "itemTpl": "<div class=\"entryInList\">\n\t\t<div class=\"left\">\n\t\t\t<img src=\"http://cdnbakmi.kaltura.com/p/9008/sp/900800/thumbnail/entry_id/{entryId}/width/40/height/30\" width=\"40\" height=\"30\" />\n\t\t</div>\n\t\t<div class=\"right\">\n\t\t\t<strong>{firstName}</strong>\n\t\t\t<span>{strModerationStatus}</span>\n\t\t</div>\n\t\t<div class=\"clear\"></div>\n\t</div>",
+                        "store": "MyStore",
+                        "designer|userClassName": "EntryList",
+                        "designer|userAlias": "EntryList",
+                        "title": "Videos"
+                    },
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "title",
+                            "type": "string"
+                        }
+                    ],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen18111",
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "bottom",
+                        "designer|userClassName": "MyToolbar",
+                        "container|pack": "end"
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen18417",
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "logout",
+                                "iconAlign": null,
+                                "iconCls": null,
+                                "text": "Logout",
+                                "designer|userClassName": "MyButton4"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
